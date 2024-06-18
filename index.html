@@ -1,1 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+            background: url('https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') center/cover no-repeat;
+            font-family: 'Arial', sans-serif;
+            color: #333; /* Warna teks utama */
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Warna latar belakang transparan */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            color: #333;
+            position: relative;
+            overflow: hidden;
+        }
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px solid #007bff; /* Warna border */
+            border-radius: 15px;
+            z-index: -1;
+        }
+        .header-container {
+            position: relative;
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 2px solid #007bff; /* Warna border */
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.9); /* Warna latar belakang transparan */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header-container h1 {
+            color: #007bff;
+            font-weight: bold;
+            font-size: 2.5rem;
+            margin: 0;
+            display: inline-block;
+            background: #fff; /* Warna latar belakang teks */
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: calc(100% + 40px);
+            height: calc(100% + 40px);
+            border: 5px solid #007bff; /* Warna border */
+            border-radius: 15px;
+            z-index: 1;
+        }
+        p {
+            text-align: center;
+            color: #6c757d; /* Warna teks tambahan */
+            margin-bottom: 30px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 15px;
+        }
+        .nav-link {
+            text-decoration: none;
+            color: #007bff;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link:hover {
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+        }
+        .nav-link i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #6c757d; /* Warna teks footer */
+            font-size: 0.9rem;
+            padding: 10px;
+            border-top: 2px solid #007bff; /* Warna border atas */
+            background: rgba(255, 255, 255, 0.8); /* Warna latar belakang transparan */
+            border-radius: 10px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+        footer span {
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <audio id="myAudio" src="/static/audio/your-song.mp3" loop></audio>
+
+    <div class="container">
+        <div class="header-container">
+            <h1>tMC Tomy Studio
+                Kalkulator V5.7</h1>
+        </div>
+        <p>Pilih operasi matematika yang ingin Anda lakukan:</p>
+        <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="/penjumlahan"><i class="fas fa-plus-circle"></i> Penjumlahan</a></li>
+            <li class="nav-item"><a class="nav-link" href="/pengurangan"><i class="fas fa-minus-circle"></i> Pengurangan</a></li>
+            <li class="nav-item"><a class="nav-link" href="/perkalian"><i class="fas fa-times-circle"></i> Perkalian</a></li>
+            <li class="nav-item"><a class="nav-link" href="/pembagian"><i class="fas fa-divide"></i> Pembagian</a></li>
+            <li class="nav-item"><a class="nav-link" href="/pemangkatan"><i class="fas fa-superscript"></i> Pemangkatan</a></li>
+            <li class="nav-item"><a class="nav-link" href="/faktorial"><i class="fas fa-exclamation"></i> Faktorial</a></li>
+        </ul>
+    </div>
+    <footer>
+        <span>tMC Tomy Studio</span> © 2024
+    </footer>
+
+    <!-- Sertakan audio-player.js -->
+    <script src="/static/js/audio-player.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+                                                                                                        </html>
 
